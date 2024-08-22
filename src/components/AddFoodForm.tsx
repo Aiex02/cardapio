@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { db, storage } from "@/lib/firebaseConfig"; // Importa o Storage
+import { db, storage } from "@/lib/firebaseConfig"; 
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -12,8 +12,8 @@ const AddFoodForm: React.FC = () => {
   const [descricao, setDescricao] = useState("");
   const [disponibilidade, setDisponibilidade] = useState(true);
   const [imagem, setImagem] = useState<File | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false); // Estado para controlar o envio
-  const [successMessage, setSuccessMessage] = useState(""); // Estado para mensagem de sucesso
+  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [successMessage, setSuccessMessage] = useState(""); 
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -32,7 +32,7 @@ const AddFoodForm: React.FC = () => {
       return;
     }
 
-    setIsSubmitting(true); // Bloqueia o formulário
+    setIsSubmitting(true); 
 
     try {
       const storageRef = ref(storage, `images/${imagem.name}`);
@@ -49,7 +49,7 @@ const AddFoodForm: React.FC = () => {
 
       console.log("Documento adicionado com ID: ", docRef.id);
 
-      // Resetar o formulário após o envio
+
       setNome("");
       setCategoria(categories[0]);
       setPreco("");
@@ -57,13 +57,13 @@ const AddFoodForm: React.FC = () => {
       setDisponibilidade(true);
       setImagem(null);
 
-      setSuccessMessage("Comida adicionada com sucesso!"); // Exibe a mensagem de sucesso
-      setTimeout(() => setSuccessMessage(""), 3000); // Remove a mensagem após 3 segundos
+      setSuccessMessage("Comida adicionada com sucesso!"); 
+      setTimeout(() => setSuccessMessage(""), 3000); 
     } catch (e) {
       console.error("Erro ao adicionar documento: ", e);
       alert("Erro ao adicionar a comida. Tente novamente.");
     } finally {
-      setIsSubmitting(false); // Desbloqueia o formulário após o envio
+      setIsSubmitting(false);
     }
   };
 
@@ -85,7 +85,7 @@ const AddFoodForm: React.FC = () => {
           onChange={(e) => setNome(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
-          disabled={isSubmitting} // Desabilita o campo enquanto está enviando
+          disabled={isSubmitting} 
         />
       </div>
       <div className="mb-4">
@@ -94,7 +94,7 @@ const AddFoodForm: React.FC = () => {
           value={categoria}
           onChange={(e) => setCategoria(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
-          disabled={isSubmitting} // Desabilita o campo enquanto está enviando
+          disabled={isSubmitting}
         >
           {categories.map((category) => (
             <option key={category} value={category}>
@@ -112,7 +112,7 @@ const AddFoodForm: React.FC = () => {
           onChange={(e) => setPreco(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
-          disabled={isSubmitting} // Desabilita o campo enquanto está enviando
+          disabled={isSubmitting} 
         />
       </div>
       <div className="mb-4">
@@ -122,7 +122,7 @@ const AddFoodForm: React.FC = () => {
           onChange={(e) => setDescricao(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
-          disabled={isSubmitting} // Desabilita o campo enquanto está enviando
+          disabled={isSubmitting} 
         />
       </div>
       <div className="mb-4">
@@ -132,7 +132,7 @@ const AddFoodForm: React.FC = () => {
           checked={disponibilidade}
           onChange={(e) => setDisponibilidade(e.target.checked)}
           className="mr-2"
-          disabled={isSubmitting} // Desabilita o campo enquanto está enviando
+          disabled={isSubmitting} 
         />
         Disponível
       </div>
@@ -144,14 +144,14 @@ const AddFoodForm: React.FC = () => {
           onChange={handleImageUpload}
           className="w-full p-2 border border-gray-300 rounded"
           required
-          disabled={isSubmitting} // Desabilita o campo enquanto está enviando
+          disabled={isSubmitting} 
         />
         {imagem && <p className="text-sm text-gray-600 mt-2">Arquivo: {imagem.name}</p>}
       </div>
       <button
         type="submit"
         className={`w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
-        disabled={isSubmitting} // Desabilita o botão enquanto está enviando
+        disabled={isSubmitting} 
       >
         {isSubmitting ? "Adicionando..." : "Adicionar Comida"}
       </button>
