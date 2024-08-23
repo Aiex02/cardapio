@@ -1,4 +1,4 @@
-### Sistema de Administração de Cardápio
+# Sistema de Administração de Cardápio
 
 Este projeto é uma aplicação de administração de cardápio, desenvolvida com Next.js e Firebase. Ele permite que administradores gerenciem os itens do cardápio, como adicionar novos pratos, editar e remover itens existentes. O sistema também implementa autenticação e controle de acesso com base em funções (roles), garantindo que apenas usuários autorizados possam acessar determinadas funcionalidades.
 
@@ -21,13 +21,13 @@ Este projeto é uma aplicação de administração de cardápio, desenvolvida co
 
 ## Configuração do Projeto
 
-# 1 clone o Repositório:
+### 1 clone o Repositório:
 ```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 ```
 
-# 2 Instale as Dependências:
+### 2 Instale as Dependências:
 Usando npm:
 ```bash
 npm install
@@ -36,7 +36,7 @@ Usando yarn
 ```bash
 yarn install
 ```
-# 3 Configuração do Firebase:
+### 3 Configuração do Firebase:
 - Crie um projeto no Firebase.
 - Habilite Firebase Authentication, Firestore Database, e Firebase Storage.
 - Configure as variáveis de ambiente no arquivo .env
@@ -50,7 +50,7 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
 NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
 ```
 
-# 4 Inicie o Servidor de Desenvolvimento:
+### 4 Inicie o Servidor de Desenvolvimento:
 Usando npm:
 ```bash
 npm run dev
