@@ -3,10 +3,10 @@
 Este projeto é uma aplicação de administração de cardápio, desenvolvida com Next.js e Firebase. Ele permite que administradores gerenciem os itens do cardápio, como adicionar novos pratos, editar e remover itens existentes. O sistema também implementa autenticação e controle de acesso com base em funções (roles), garantindo que apenas usuários autorizados possam acessar determinadas funcionalidades.
 
 ## Tecnologias Utilizadas
--Next.js: Framework React para desenvolvimento de aplicações web com renderização do lado do servidor (SSR).
--React: Biblioteca JavaScript para construção de interfaces de usuário.
--Firebase: Backend-as-a-Service (BaaS) que inclui autenticação, Firestore para banco de dados e Firebase Storage para armazenamento de arquivos.
--Tailwind CSS: Framework de CSS para estilização rápida e eficiente.
+- Next.js: Framework React para desenvolvimento de aplicações web com renderização do lado do servidor (SSR).
+- React: Biblioteca JavaScript para construção de interfaces de usuário.
+- Firebase: Backend-as-a-Service (BaaS) que inclui autenticação, Firestore para banco de dados e Firebase Storage para armazenamento de arquivos.
+- Tailwind CSS: Framework de CSS para estilização rápida e eficiente.
 
 ## Funcionalidades
 - Autenticação de Usuários: Sistema de login e registro de usuários utilizando Firebase Authentication.
